@@ -34,7 +34,7 @@ const createEmailTemplate = (customerName, orderId, orderData) => {
     </head>
     <body>
       <div class="header">
-        <h1>🎆 Hariharan Crackers</h1>
+        <h1>🎆 HariHaran Crackers</h1>
         <p>Thank you for your order!</p>
       </div>
       
@@ -70,15 +70,15 @@ const createEmailTemplate = (customerName, orderId, orderData) => {
         
         <p>If you have any questions about your order, please don't hesitate to contact us:</p>
         <p>
-          📞 Phone: +91 9962814577<br>
-          📧 Email: mks_prithi@yahoo.co.in<br>
-          📍 Address: Sivakasi - 626123
+          📞 Phone: +91 9894446693<br>
+          📧 Email: sample@gmail.com<br>
+          📍 Address: 181//9/19, Pernaikyanpatti, Vembakkottai, Sivakasi, Virudhunagar, Tamil Nadu - 626123
         </p>
         
-        <p>Thank you for choosing Hariharan Crackers for your festive celebrations!</p>
+        <p>Thank you for choosing HariHaran Crackers for your festive celebrations!</p>
         
         <p>Best regards,<br>
-        <strong>Hariharan Crackers Team</strong><br>
+        <strong>HariHaran Crackers Team</strong><br>
         Sivakasi - 626123</p>
       </div>
       
@@ -99,11 +99,11 @@ const sendReceiptEmail = async (customerEmail, customerName, orderId, pdfBase64,
 
     const mailOptions = {
       from: {
-        name: 'Hariharan Crackers',
-        address: process.env.EMAIL_USER
+        name: 'HariHaran Crackers',
+        address: process.env.EMAIL_USER || 'sample@gmail.com'
       },
       to: customerEmail,
-      subject: `🎆 Order Confirmation - ${orderId} - Hariharan Crackers`,
+      subject: `🎆 Order Confirmation - ${orderId} - HariHaran Crackers`,
       html: htmlTemplate,
       attachments: [
         {
@@ -187,7 +187,7 @@ exports.sendReceiptEmail = async (req, res) => {
       </head>
       <body>
         <div class="header">
-          <h1>🎆 Hariharan Crackers</h1>
+          <h1>🎆 HariHaran Crackers</h1>
           <p>Thank you for your order!</p>
         </div>
         <div class="content">
@@ -199,8 +199,8 @@ exports.sendReceiptEmail = async (req, res) => {
             <p><strong>Order Date:</strong> ${new Date().toLocaleDateString()}</p>
             <p class="total">Final Total: ₹${Math.round(orderData.totals.total)}</p>
           </div>
-          <p>Thank you for choosing Hariharan Crackers!</p>
-          <p>Best regards,<br><strong>Hariharan Crackers Team</strong></p>
+          <p>Thank you for choosing HariHaran Crackers!</p>
+          <p>Best regards,<br><strong>HariHaran Crackers Team</strong></p>
         </div>
       </body>
       </html>
@@ -208,11 +208,11 @@ exports.sendReceiptEmail = async (req, res) => {
 
     const mailOptions = {
       from: {
-        name: 'Hariharan Crackers',
-        address: process.env.EMAIL_USER 
+        name: 'HariHaran Crackers',
+        address: process.env.EMAIL_USER || 'sample@gmail.com'
       },
       to: customerEmail,
-      subject: `🎆 Order Confirmation - ${orderId} - Hariharan Crackers`,
+      subject: `🎆 Order Confirmation - ${orderId} - HariHaran Crackers`,
       html: htmlTemplate,
       attachments: [
         {
@@ -241,6 +241,7 @@ exports.sendReceiptEmail = async (req, res) => {
     });
   }
 };
+
 
 // Get all orders
 exports.getOrders = async (req, res) => {
